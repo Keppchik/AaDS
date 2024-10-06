@@ -1,5 +1,6 @@
 import time
-import psutil
+import tracemalloc
+tracemalloc.start()
 t_start = time.perf_counter()
 
 f = open("input.txt", "r")
@@ -21,4 +22,5 @@ for i in range(n):
 f.close()
 
 print("Время работы: %s секунд " % (time.perf_counter() - t_start))
-print("Память:", psutil.Process().memory_info().rss / 1024 ** 2, "МБ")
+print("Память:", tracemalloc.get_traced_memory()[1] / (1024 ** 2), "МБ" )
+tracemalloc.stop()
