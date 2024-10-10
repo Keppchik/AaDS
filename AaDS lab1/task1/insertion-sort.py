@@ -9,12 +9,13 @@ a = list(map(int, f.readline().split()))
 f.close()
 
 for i in range(1, n):
-    j = i
+    j = i-1
     temp = a[i]
-    while j > 0 and a[j-1] > temp:
-        a[j], a[j-1] = a[j-1], a[j]
+    while j >= 0 and temp < a[j]:
+        a[j+1] = a[j]
         j -= 1
-    a[j] = temp
+    a[j+1] = temp
+
 
 f = open("output.txt", "w")
 for i in range(n):
