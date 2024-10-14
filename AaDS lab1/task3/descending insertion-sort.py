@@ -14,7 +14,6 @@ for i in range(1, n):
     while j >= 0 and temp > a[j]:
         a[j+1] = a[j]
         j -= 1
-        print(*a)
     a[j+1] = temp
 
 f = open("output.txt", "w")

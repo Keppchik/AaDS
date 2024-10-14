@@ -4,16 +4,17 @@ tracemalloc.start()
 t_start = time.perf_counter()
 
 f = open("input.txt", "r")
+n = int(f.readline())
 a = list(map(int,f.readline().split()))
 f.close()
 
-for i in range(len(a)):
-    for j in range(len(a)):
-        if a[i] < a[j]:
-            a[j], a[i] = a[i], a[j]
+for i in range(n):
+    for j in range(n-1,i,-1):
+        if a[j] < a[j-1]:
+            a[j], a[j-1] = a[j-1], a[j]
 
 f = open("output.txt", "w")
-for i in range(len(a)):
+for i in range(n):
     f.write(str(a[i]) + " ")
 f.close()
 
