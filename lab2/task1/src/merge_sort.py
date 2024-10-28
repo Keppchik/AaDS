@@ -1,6 +1,6 @@
 import time
 import tracemalloc
-
+import lab2.utils as utils
 
 def merge(A, p, q, r):
     L = A[p:q]
@@ -30,15 +30,12 @@ if __name__ == "__main__":
     tracemalloc.start()
     t_start = time.perf_counter()
 
-    f = open("../txtf/input.txt", "r")
-    n = int(f.readline())
-    a = list(map(int, f.readline().split()))
-    f.close()
+    data = utils.read_from_file("../txtf/input.txt")
+    n = data[0]
+    a = data[1:]
 
-    f = open("../txtf/output.txt", "w")
-    f.write(str(merge_sort(a, 0, len(a))))
-    f.close()
+    result = merge_sort(a, 0, n)
 
-    print("Время работы: %s секунд " % (time.perf_counter() - t_start))
-    print("Память:", tracemalloc.get_traced_memory()[1] / (1024 ** 2), "МБ")
+    utils.write_in_file("../txtf/output.txt", result)
+    utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
     tracemalloc.stop()

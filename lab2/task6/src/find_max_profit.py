@@ -1,15 +1,13 @@
 import time
 import tracemalloc
-
+import lab2.utils as utils
 
 if __name__ == "__main__":
     tracemalloc.start()
     t_start = time.perf_counter()
 
-    f = open("../txtf/input.txt", "r")
-    a = list(map(int, f.readline().split()))
-    f.close()
-
+    data = utils.read_from_file("../txtf/input.txt")
+    a = data
 
     pref = [0]*(len(a)+1)
     for i in range(1, len(a)+1):
@@ -24,12 +22,6 @@ if __name__ == "__main__":
     for i in range(1, len(a)+1):
         max_arr = max(max_arr, pref[i] - min_l[i-1])
 
-
-
-    f = open("../txtf/output.txt", "w")
-    f.write(str(max_arr)+"   "+str(max_sum))
-    f.close()
-
-    print("Время работы: %s секунд " % (time.perf_counter() - t_start))
-    print("Память:", tracemalloc.get_traced_memory()[1] / (1024 ** 2), "МБ")
+    utils.write_in_file("../txtf/output.txt", [max_arr])
+    utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
     tracemalloc.stop()
