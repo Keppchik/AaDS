@@ -2,8 +2,8 @@
 ### Студент ИТМО Кретов Иван Алексеевич
 
 # Навигация по репозиторию
-[1. Лабораторная №0. Введение](<https://github.com/Keppchik/AaDS/tree/main/AaDS%20lab0>)
+[1. Лабораторная №0. Введение](<https://github.com/Keppchik/AaDS/tree/main/lab0>)
 
-[2. Лабораторная №1. Сортировка вставками, выбором, пузырьковая](<https://github.com/Keppchik/AaDS/tree/main/AaDS%20lab1>)
+[2. Лабораторная №1. Сортировка вставками, выбором, пузырьковая](<https://github.com/Keppchik/AaDS/tree/main/lab1>)
 
-[3. Лабораторная №2. Сортировка слиянием. Метод декомпозиции](<>)
+[3. Лабораторная №2. Сортировка слиянием. Метод декомпозиции](<https://github.com/Keppchik/AaDS/tree/main/lab2>)
