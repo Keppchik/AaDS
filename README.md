@@ -7,3 +7,5 @@
 [2. Лабораторная №1. Сортировка вставками, выбором, пузырьковая](<https://github.com/Keppchik/AaDS/tree/main/lab1>)
 
 [3. Лабораторная №2. Сортировка слиянием. Метод декомпозиции](<https://github.com/Keppchik/AaDS/tree/main/lab2>)
+
+[4. Лабораторная №3. Быстрая сортировка, сортировка за линейное время](<https://github.com/Keppchik/AaDS/tree/main/lab3>)
