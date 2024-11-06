@@ -16,7 +16,7 @@ def write_in_file(filename: str, array: any, split_str: str = ' ') -> None:
         f.write(split_str.join(map(str,array)))
     return None
 
-def time_memory_usage(time, memory):
+def print_time_memory(time, memory):
     print(f'Время работы: {time} секунд ')
     print(f'Память: {memory} МБ')
 
