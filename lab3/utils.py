@@ -40,8 +40,6 @@ def best_array(n: int) -> list:
 
 def is_sorted(arr: list) -> bool:
     for i in range(1, len(arr)-1):
-        if arr[i] >= arr[i-1]:
-            pass
-        else:
+        if arr[i-1] > arr[i]:
             return False
     return True

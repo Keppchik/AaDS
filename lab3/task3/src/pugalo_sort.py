@@ -3,6 +3,12 @@ import tracemalloc
 import lab3.utils as utils
 import random
 
+def razbiyenie(arr,n, k):
+    lists = [[] for _ in range(k)]
+    for i in range(n):
+        lists[i%k].append(arr[i])
+    return lists
+
 def partition(arr, low, high):
     pivot = arr[low]
     j = low
@@ -22,31 +28,30 @@ def random_quick_sort(arr, low, high) -> list:
         random_quick_sort(arr, m + 1, high)
     return arr
 
-def partition_three(arr, low, high):
-    pivot = arr[low]
-    j = low
-    k = high - 1
-    i = low + 1
-    while i <= k:
-        if arr[i] < pivot:
-            arr[j], arr[i] = arr[i], arr[j]
-            j += 1
-            i += 1
-        elif arr[i] > pivot:
-            arr[k], arr[i] = arr[i], arr[k]
-            k -= 1
-        else:
-            i += 1
-    return j, k
+def sort_lists(lists):
+    for i in range(len(lists)):
+        lists[i] = random_quick_sort(lists[i], 0, len(lists[i]))
 
-def random_quick_sort_three(arr, low, high):
-    if low < high:
-        k = random.randint(low, high - 1)
-        arr[k], arr[low] = arr[low], arr[k]
-        m1, m2 = partition_three(arr, low, high)
-        random_quick_sort_three(arr, low, m1)
-        random_quick_sort_three(arr, m2 + 1, high)
-    return arr
+def pugalo_sort(arr, n, k):
+    lists = razbiyenie(arr, n, k)
+    sort_lists(lists)
+
+    result = []
+    j = -1
+    for i in range(n):
+        if i % k == 0:
+            j = j + 1
+        result.append(lists[i%k][j])
+
+    return result
+
+def can_be_sorted(arr, n, k):
+    arr = pugalo_sort(arr, n, k)
+
+    for i in range(1, n):
+        if arr[i-1] > arr[i]:
+            return False
+    return True
 
 
 if __name__ == "__main__":
@@ -55,9 +60,10 @@ if __name__ == "__main__":
 
     data = utils.read_from_file("../txtf/input.txt")
     n = data[0]
-    arr = data[1:]
-    result = random_quick_sort_three(arr, 0, n)
+    k = data[1]
+    arr = data[2:]
+    result = can_be_sorted(arr, n, k)
 
-    utils.write_in_file("../txtf/output.txt", result)
+    utils.write_in_file("../txtf/output.txt", [result])
     utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
     tracemalloc.stop()
