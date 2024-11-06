@@ -50,8 +50,8 @@ def can_be_sorted(arr, n, k):
 
     for i in range(1, n):
         if arr[i-1] > arr[i]:
-            return False
-    return True
+            return "НЕТ"
+    return "ДА"
 
 
 if __name__ == "__main__":
