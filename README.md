@@ -39,7 +39,7 @@
 
 4. **Запуск всех тестов**
     ```bash
-        команда
+    for script in lab*/*/tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
     ```
 
 
