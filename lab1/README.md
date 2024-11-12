@@ -28,9 +28,3 @@
    ```bash
     for script in */src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
    ```
-
-## Тестирование
-Для запуска тестов выполните:
-```bash
-    pytest tests/
-```
