@@ -1,11 +1,10 @@
-import time
-import tracemalloc
+import os
 import lab1.utils as utils
 
-tracemalloc.start()
-t_start = time.perf_counter()
+time_start = utils.start_tracking()
+input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-data = utils.read_from_file("../txtf/input.txt", type=float)
+data = utils.read_from_file(input_path, type=float)
 n = data[0]
 a = data[1:]
 
@@ -25,7 +24,5 @@ for i in range(n):
     elif b[i] == a[-1]:
         s[2] = str(i+1)
 
-utils.write_in_file("../txtf/output.txt", s)
-
-utils.print_time_memory(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
-tracemalloc.stop()
+utils.write_in_file(output_path, s)
+utils.print_time_memory(time_start)

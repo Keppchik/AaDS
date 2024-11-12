@@ -1,21 +1,23 @@
 import lab2.utils as utils
+import os
 
 def max_subarr(arr):
-    max_sub = a[0]
-    sub = a[0]
+    max_sub = arr[0]
+    sub = arr[0]
 
-    for i in range(1, len(a)):
-        sub = max(a[i], sub + a[i])
+    for i in range(1, len(arr)):
+        sub = max(arr[i], sub + arr[i])
         max_sub = max(max_sub, sub)
 
     return max_sub
 
 if __name__ == "__main__":
     time_start = utils.start_tracking()
+    input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-    data = utils.read_from_file("../txtf/input.txt")
-    a = data
-    result = max_subarr(a)
+    data = utils.read_from_file(input_path)
+    arr = data
+    result = max_subarr(arr)
 
-    utils.write_in_file("../txtf/output.txt", [result])
+    utils.write_in_file(output_path, [result])
     utils.print_time_memory(time_start)

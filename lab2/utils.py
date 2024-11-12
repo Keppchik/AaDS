@@ -1,6 +1,16 @@
 import random
 import time
 import tracemalloc
+import os
+
+def get_file_paths(path):
+    current_script_dir = os.path.dirname(path)
+    relative_path = os.path.join(current_script_dir, '..', 'txtf')
+
+    input_path = os.path.abspath(relative_path + "/input.txt")
+    output_path = os.path.abspath(relative_path + "/output.txt")
+
+    return input_path, output_path
 
 def read_from_file(filename: str, type = int):
     f = open(filename, "r")
@@ -35,9 +45,7 @@ def random_array(n: int, values: int = 10**4) -> list:
     return arr
 
 def worst_array(n: int) -> list:
-    arr = []
-    for i in range(n,0,-1):
-        arr.append(i)
+    arr = [x for x in range(n, 0, -1)]
     return arr
 
 def best_array(n: int) -> list:

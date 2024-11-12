@@ -1,4 +1,5 @@
 import lab3.utils as utils
+import os
 
 def counting_sort(arr, r, n):
     output = [0] * n
@@ -28,8 +29,9 @@ def radix_sort(arr, n):
 
 if __name__ == "__main__":
     time_start = utils.start_tracking()
+    input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-    data = utils.read_from_file("../txtf/input.txt")
+    data = utils.read_from_file(input_path)
     n, m = data[0], data[1]
     arr1 = data[2:n+2]
     arr2 = data[n+2:]
@@ -41,5 +43,5 @@ if __name__ == "__main__":
     for i in range(0, n*m, 10):
         result += sorted_arr[i]
 
-    utils.write_in_file("../txtf/output.txt", [result])
+    utils.write_in_file(output_path, [result])
     utils.print_time_memory(time_start)

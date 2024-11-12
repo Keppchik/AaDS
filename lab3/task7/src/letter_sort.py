@@ -1,4 +1,5 @@
 import lab3.utils as utils
+import os
 
 def letter_sort(arr, n, m, k):
     indexes = [i+1 for i in range(n)]
@@ -25,8 +26,9 @@ def letter_sort(arr, n, m, k):
 
 if __name__ == "__main__":
     time_start = utils.start_tracking()
+    input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-    data = utils.read_from_file("../txtf/input.txt", type=str)
+    data = utils.read_from_file(input_path, type=str)
     n = int(data[0])
     m = int(data[2])
     k = int(data[4])
@@ -34,5 +36,5 @@ if __name__ == "__main__":
 
     result = letter_sort(arr.copy(), n, m, k)
 
-    utils.write_in_file("../txtf/output.txt", result)
+    utils.write_in_file(output_path, result)
     utils.print_time_memory(time_start)

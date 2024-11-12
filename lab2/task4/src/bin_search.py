@@ -1,4 +1,5 @@
 import lab2.utils as utils
+import os
 
 def bin_search(a, value, p, r):
     if p < r:
@@ -14,8 +15,9 @@ def bin_search(a, value, p, r):
 
 if __name__ == "__main__":
     time_start = utils.start_tracking()
+    input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-    data = utils.read_from_file("../txtf/input.txt")
+    data = utils.read_from_file(input_path)
     n = data[0]
     a = data[1:n+1]
     k = data[n+1]
@@ -23,5 +25,5 @@ if __name__ == "__main__":
 
     result = [bin_search(a, number, 0, n) for number in b]
 
-    utils.write_in_file("../txtf/output.txt", result)
+    utils.write_in_file(output_path, result)
     utils.print_time_memory(time_start)

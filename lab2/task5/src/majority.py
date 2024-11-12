@@ -1,4 +1,5 @@
 import lab2.utils as utils
+import os
 
 def merge(A, p, q, r):
     L = A[p:q]
@@ -39,8 +40,9 @@ def majority(arr, n):
 
 if __name__ == "__main__":
     time_start = utils.start_tracking()
+    input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-    data = utils.read_from_file("../txtf/input.txt")
+    data = utils.read_from_file(input_path)
     n = data[0]
     arr = data[1:]
 
@@ -48,5 +50,5 @@ if __name__ == "__main__":
 
     result = majority(arr, n)
 
-    utils.write_in_file("../txtf/output.txt", [result])
+    utils.write_in_file(output_path, [result])
     utils.print_time_memory(time_start)

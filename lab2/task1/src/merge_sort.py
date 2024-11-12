@@ -1,6 +1,7 @@
-import time
-import tracemalloc
+import sys
+
 import lab2.utils as utils
+import os
 
 def merge(A, p, q, r):
     L = A[p:q]
@@ -27,15 +28,14 @@ def merge_sort(A, p, r):
     return A
 
 if __name__ == "__main__":
-    tracemalloc.start()
-    t_start = time.perf_counter()
+    time_start = utils.start_tracking()
+    input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-    data = utils.read_from_file("../txtf/input.txt")
+    data = utils.read_from_file(input_path)
     n = data[0]
     a = data[1:]
 
     result = merge_sort(a, 0, n)
 
-    utils.write_in_file("../txtf/output.txt", result)
-    utils.print_time_memory(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
-    tracemalloc.stop()
+    utils.write_in_file(output_path, result)
+    utils.print_time_memory(time_start)

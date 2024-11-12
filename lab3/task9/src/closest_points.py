@@ -1,6 +1,7 @@
 import lab3.task1.src.quick_sort as QS
 import lab3.utils as utils
 import math
+import os
 
 def distance(point1, point2):
     x1, y1 = point1
@@ -34,8 +35,9 @@ def closest_points(points, low, high):
 
 if __name__ == "__main__":
     time_start = utils.start_tracking()
+    input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-    f = open("../txtf/input.txt", "r")
+    f = open(input_path, "r")
     n = int(f.readline())
     points = []
     for _ in range(n):
@@ -43,7 +45,7 @@ if __name__ == "__main__":
         points.append(line)
     points = QS.random_quick_sort_three(points, 0, n)
 
-    result = closest_points(points, 0, n)
+    result = f"{closest_points(points, 0, n):.6}"
 
-    utils.write_in_file("../txtf/output.txt", [result])
+    utils.write_in_file(output_path, [result])
     utils.print_time_memory(time_start)
