@@ -23,5 +23,5 @@ else:
     arr = ' '.join(map(str, k))
     utils.write_in_file(path, str(len(k))+'\n'+ arr, split_str="")
 
-utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
+utils.print_time_memory(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
 tracemalloc.stop()

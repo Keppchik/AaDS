@@ -37,5 +37,5 @@ if __name__ == "__main__":
     result = merge_sort(a, 0, n)
 
     utils.write_in_file("../txtf/output.txt", result)
-    utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
+    utils.print_time_memory(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
     tracemalloc.stop()

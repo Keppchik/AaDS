@@ -1,5 +1,3 @@
-import time
-import tracemalloc
 import lab3.task1.src.quick_sort as QS
 import lab3.utils as utils
 import math
@@ -35,8 +33,7 @@ def closest_points(points, low, high):
 
 
 if __name__ == "__main__":
-    tracemalloc.start()
-    t_start = time.perf_counter()
+    time_start = utils.start_tracking()
 
     f = open("../txtf/input.txt", "r")
     n = int(f.readline())
@@ -49,5 +46,4 @@ if __name__ == "__main__":
     result = closest_points(points, 0, n)
 
     utils.write_in_file("../txtf/output.txt", [result])
-    utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
-    tracemalloc.stop()
+    utils.print_time_memory(time_start)

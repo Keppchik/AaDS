@@ -1,5 +1,3 @@
-import time
-import tracemalloc
 import lab2.utils as utils
 
 def merge(A, p, q, r):
@@ -40,8 +38,7 @@ def majority(arr, n):
     return 0
 
 if __name__ == "__main__":
-    tracemalloc.start()
-    t_start = time.perf_counter()
+    time_start = utils.start_tracking()
 
     data = utils.read_from_file("../txtf/input.txt")
     n = data[0]
@@ -52,5 +49,4 @@ if __name__ == "__main__":
     result = majority(arr, n)
 
     utils.write_in_file("../txtf/output.txt", [result])
-    utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
-    tracemalloc.stop()
+    utils.print_time_memory(time_start)

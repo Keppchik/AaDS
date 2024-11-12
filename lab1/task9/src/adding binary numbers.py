@@ -16,5 +16,5 @@ for i in range(len(s3)-1, 0, -1):
 
 utils.write_in_file("../txtf/output.txt", s3, split_str="")
 
-utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
+utils.print_time_memory(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
 tracemalloc.stop()

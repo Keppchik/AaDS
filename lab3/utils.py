@@ -1,4 +1,6 @@
 import random
+import time
+import tracemalloc
 
 def read_from_file(filename: str, type = int):
     f = open(filename, "r")
@@ -16,9 +18,15 @@ def write_in_file(filename: str, array: any, split_str: str = ' ') -> None:
         f.write(split_str.join(map(str,array)))
     return None
 
-def print_time_memory(time, memory):
-    print(f'Время работы: {time} секунд ')
-    print(f'Память: {memory} МБ')
+def start_tracking():
+    tracemalloc.start()
+    return time.perf_counter()
+
+def print_time_memory(time_start):
+    print(f'Время работы: {time.perf_counter() - time_start} секунд ')
+    print(f'Память: {tracemalloc.get_traced_memory()[1] / (1024 ** 2)} МБ')
+    tracemalloc.stop()
+
 
 def random_array(n: int, values: int = 10**4) -> list:
     arr = []

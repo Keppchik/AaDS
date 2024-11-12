@@ -1,14 +1,6 @@
-import time
-import tracemalloc
 import lab2.utils as utils
 
-if __name__ == "__main__":
-    tracemalloc.start()
-    t_start = time.perf_counter()
-
-    data = utils.read_from_file("../txtf/input.txt")
-    a = data
-
+def max_subarr(arr):
     max_sub = a[0]
     sub = a[0]
 
@@ -16,6 +8,14 @@ if __name__ == "__main__":
         sub = max(a[i], sub + a[i])
         max_sub = max(max_sub, sub)
 
-    utils.write_in_file("../txtf/output.txt", [max_sub])
-    utils.time_memory_usage(time.perf_counter() - t_start, tracemalloc.get_traced_memory()[1] / (1024 ** 2))
-    tracemalloc.stop()
+    return max_sub
+
+if __name__ == "__main__":
+    time_start = utils.start_tracking()
+
+    data = utils.read_from_file("../txtf/input.txt")
+    a = data
+    result = max_subarr(a)
+
+    utils.write_in_file("../txtf/output.txt", [result])
+    utils.print_time_memory(time_start)
