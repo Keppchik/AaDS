@@ -31,5 +31,5 @@
 ## Тестирование
 Для запуска тестов выполните:
 ```bash
-    pytest tests/
+    for script in */tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
 ```
