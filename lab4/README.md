@@ -7,9 +7,9 @@
 - [ ] [Задача 2 - Очередь](task2)
 - [ ] [Задача 3 - Скобочная последовательность. Версия 1](task3)
 - [ ] [Задача 6 - Очерель с минимумом](task6)
+- [ ] [Задача 10 - Поликлиника](task9)
 - [ ] [Задача 10 - Очередь в пекарню](task10)
-- [ ] [Задача  - ](task)
-- [ ] [Задача  - ](task)
+- [ ] [Задача 13 - Реализация стека, очереди и связанных списков](task13)
 
 ## Описание
 Лабораторная работа посвящена разбору элементарных структур данных, таких как стек, очередь и связанный список.
@@ -23,13 +23,37 @@
    ```bash
    cd AaDS/lab3
    ```
-3. **Запуску всех задач**
+3. **Запуск всех задач**
+
+   Для terminal
    ```bash
-    for script in */src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
+   for script in lab*/*/src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
+   ```
+   Для cmd
+   ```bash
+   set PYTHONPATH=%cd%
+   for /f "delims=" %f in ('dir /s /b *.py ^| findstr "\\src\\"') do python "%f"
+   ```
+   Для PowerShell
+   ```bash
+   $env:PYTHONPATH = (Get-Location).Path
+   Get-ChildItem -Recurse -Filter *.py -Path lab*/*/src | ForEach-Object { python $_.FullName }
    ```
 
 ## Тестирование
-Для запуска тестов выполните:
-```bash
-    for script in */tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
-```
+### Для запуска тестов выполните:
+
+ Для terminal
+   ```bash
+   for script in lab*/*/tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
+   ```
+   Для cmd
+   ```bash
+   set PYTHONPATH=%cd%
+   for /f "delims=" %f in ('dir /s /b *.py ^| findstr "\\tests\\"') do python "%f"
+   ```
+   Для PowerShell
+   ```bash
+   $env:PYTHONPATH = (Get-Location).Path
+   Get-ChildItem -Recurse -Filter *.py -Path lab*/*/tests | ForEach-Object { python $_.FullName }
+   ```
