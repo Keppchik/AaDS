@@ -21,13 +21,13 @@
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd AaDS/lab3
+   cd AaDS/lab4
    ```
 3. **Запуск всех задач**
 
    Для terminal
    ```bash
-   for script in lab*/*/src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
+   for script in */src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
    ```
    Для cmd
    ```bash
@@ -42,18 +42,6 @@
 
 ## Тестирование
 ### Для запуска тестов выполните:
-
- Для terminal
    ```bash
-   for script in lab*/*/tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
-   ```
-   Для cmd
-   ```bash
-   set PYTHONPATH=%cd%
-   for /f "delims=" %f in ('dir /s /b *.py ^| findstr "\\tests\\"') do python "%f"
-   ```
-   Для PowerShell
-   ```bash
-   $env:PYTHONPATH = (Get-Location).Path
-   Get-ChildItem -Recurse -Filter *.py -Path lab*/*/tests | ForEach-Object { python $_.FullName }
+   pytest
    ```
