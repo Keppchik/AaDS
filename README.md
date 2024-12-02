@@ -8,6 +8,7 @@
 - [ ] [Лабораторная №1. Сортировка вставками, выбором, пузырьковая](lab1)
 - [ ] [Лабораторная №2. Сортировка слиянием. Метод декомпозиции](lab2)
 - [ ] [Лабораторная №3. Быстрая сортировка, сортировка за линейное время](lab3)
+- [ ] [Лабораторная работа №4: Стек, очередь, связанный список](lab4)
 
 ### Цели и задачи
 
@@ -34,13 +35,38 @@
    cd AaDS
    ```
 3. **Запуск всех лабараторных**
-    ```bash
-    for script in lab*/*/src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
-    ```
+
+   Для terminal
+   ```bash
+   for script in lab*/*/src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
+   ```
+   Для cmd
+   ```bash
+   set PYTHONPATH=%cd%
+   for /f "delims=" %f in ('dir /s /b *.py ^| findstr "\\src\\"') do python "%f"
+   ```
+   Для PowerShell
+   ```bash
+   $env:PYTHONPATH = (Get-Location).Path
+   Get-ChildItem -Recurse -Filter *.py -Path lab*/*/src | ForEach-Object { python $_.FullName }
+   ```
+
 
 4. **Запуск всех тестов**
-    ```bash
-    for script in lab*/*/tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
-    ```
+
+    Для terminal
+   ```bash
+   for script in lab*/*/tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
+   ```
+   Для cmd
+   ```bash
+   set PYTHONPATH=%cd%
+   for /f "delims=" %f in ('dir /s /b *.py ^| findstr "\\tests\\"') do python "%f"
+   ```
+   Для PowerShell
+   ```bash
+   $env:PYTHONPATH = (Get-Location).Path
+   Get-ChildItem -Recurse -Filter *.py -Path lab*/*/tests | ForEach-Object { python $_.FullName }
+   ```
 
 
