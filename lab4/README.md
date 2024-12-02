@@ -21,7 +21,7 @@
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd AaDS/lab4
+   cd AaDS
    ```
 3. **Запуск всех задач**
 
@@ -44,5 +44,5 @@
 ### Для запуска тестов выполните:
    ```bash
    export PYTHONPATH=$(pwd)
-   pytest
+   pytest lab4
    ```
