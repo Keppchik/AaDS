@@ -25,19 +25,8 @@
    ```
 3. **Запуск всех задач**
 
-   Для terminal
    ```bash
-   for script in */src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
-   ```
-   Для cmd
-   ```bash
-   set PYTHONPATH=%cd%
-   for /f "delims=" %f in ('dir /s /b *.py ^| findstr "\\src\\"') do python "%f"
-   ```
-   Для PowerShell
-   ```bash
-   $env:PYTHONPATH = (Get-Location).Path
-   Get-ChildItem -Recurse -Filter *.py -Path lab*/*/src | ForEach-Object { python $_.FullName }
+   for script in lab4/*/src/*.py; do PYTHONPATH=$(pwd) python "$script"; done
    ```
 
 ## Тестирование
