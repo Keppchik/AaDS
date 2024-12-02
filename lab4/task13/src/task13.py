@@ -17,7 +17,6 @@ class Stack:
 
     def pop(self):
         if self.isEmpty():
-            print("Стек пуст")
             return None
         popped_data = self.first.data
         self.first = self.first.next
@@ -49,7 +48,6 @@ class Queue:
 
     def enqueue(self, value):
         if self.isFull():
-            print("Очередь переполнена")
             return
         new_node = Node(value)
         if self.isEmpty():
@@ -61,7 +59,6 @@ class Queue:
 
     def dequeue(self):
         if self.isEmpty():
-            print("Очередь пуста")
             return None
         self.front = self.front.next
         if self.front is None:
