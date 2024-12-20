@@ -33,7 +33,7 @@ def main(data, n):
     return tree_depth(n, array)
 
 if __name__ == '__main__':
-    print("LAB4 TASK 2:")
+    print("LAB5 TASK 2:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 

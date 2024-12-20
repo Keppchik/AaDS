@@ -23,7 +23,7 @@ def heapsort(data):
     return data
 
 if __name__ == '__main__':
-    print("LAB4 TASK 3:")
+    print("LAB5 TASK 7:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 

@@ -41,7 +41,7 @@ def main(data):
     return result
 
 if __name__ == '__main__':
-    print("LAB4 TASK 6:")
+    print("LAB5 TASK 6:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
