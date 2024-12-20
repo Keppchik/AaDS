@@ -39,9 +39,9 @@ def print_time_memory(time_start):
     tracemalloc.stop()
 
 def return_time_memory(time_start):
+    end_time = time.perf_counter() - time_start
     memory = tracemalloc.get_traced_memory()[1] / (1024 ** 2)
     tracemalloc.stop()
-    end_time = time.perf_counter() - time_start
     return end_time, memory
 
 
