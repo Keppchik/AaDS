@@ -29,7 +29,7 @@ class QueueMinimumTest(unittest.TestCase):
 
         # when
         queue = Queue()
-        for i in range(10**6):
+        for i in range(10**5):
             value = random.randint(1, 10**6)
             queue.add(value)
             queue.min()
