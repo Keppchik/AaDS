@@ -15,13 +15,14 @@ class Queue:
         return self.minimum
 
     def remove(self):
-        del_value = self.queue[0]
-        self.queue.pop(0)
-        if del_value == self.minimum:
-            self.minimum = float("+inf")
-            for value in self.queue:
-                if value < self.minimum:
-                    self.minimum = value
+        if queue:
+            del_value = self.queue[0]
+            self.queue.pop(0)
+            if del_value == self.minimum:
+                self.minimum = float("+inf")
+                for value in self.queue:
+                    if value < self.minimum:
+                        self.minimum = value
 
 
     def __repr__(self):

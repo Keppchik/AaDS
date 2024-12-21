@@ -9,9 +9,10 @@ class Queue:
         self.queue.append(value)
 
     def remove(self):
-        value = self.queue[0]
-        self.queue.pop(0)
-        return value
+        if queue:
+            value = self.queue[0]
+            self.queue.pop(0)
+            return value
 
     def __repr__(self):
         return f"Queue({self.queue})"

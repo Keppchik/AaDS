@@ -17,9 +17,10 @@ class Queue:
         self.queue.insert(middle, value)
 
     def remove(self):
-        del_value = self.queue[0]
-        self.queue.pop(0)
-        return del_value
+        if queue:
+            del_value = self.queue[0]
+            self.queue.pop(0)
+            return del_value
 
     def __repr__(self):
         return f"Queue({self.queue})"
