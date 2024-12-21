@@ -1,4 +1,4 @@
-import lab2.utils as utils
+import utils
 import os
 
 def merge(A, p, q, r):

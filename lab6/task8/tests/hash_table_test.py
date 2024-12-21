@@ -1,6 +1,6 @@
 import unittest
 from random import randint
-import lab6.utils as utils
+import utils
 from lab6.task8.src.hash_table import make_table
 
 

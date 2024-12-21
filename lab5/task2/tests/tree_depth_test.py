@@ -1,5 +1,5 @@
 import unittest
-import lab5.utils as utils
+import utils
 from lab5.task2.src.tree_depth import tree_depth
 
 class TreeDepthTest(unittest.TestCase):

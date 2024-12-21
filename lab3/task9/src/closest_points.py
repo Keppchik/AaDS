@@ -1,5 +1,5 @@
 import lab3.task1.src.quick_sort as QS
-import lab3.utils as utils
+import utils
 import math
 import os
 

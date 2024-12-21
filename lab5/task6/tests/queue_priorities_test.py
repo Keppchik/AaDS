@@ -1,5 +1,5 @@
 import unittest
-import lab5.utils as utils
+import utils
 from lab5.task6.src.queue_priorities import main, Queue
 
 

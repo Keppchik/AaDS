@@ -1,4 +1,4 @@
-import lab2.utils as utils
+import utils
 import os
 
 count = 0

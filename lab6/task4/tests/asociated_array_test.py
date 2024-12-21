@@ -1,5 +1,5 @@
 import unittest
-import lab6.utils as utils
+import utils
 from lab6.task4.src.asociated_array import AsociatedArray
 
 

@@ -1,5 +1,5 @@
 import unittest
-import lab4.utils as utils
+import utils
 import random
 from lab4.task6.src.queue_minimum import Queue
 

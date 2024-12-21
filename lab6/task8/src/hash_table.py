@@ -1,4 +1,4 @@
-import lab6.utils as utils
+import utils
 import os
 
 def make_table(n, x, a, b, ac, bc, ad, bd):

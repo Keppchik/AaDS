@@ -1,4 +1,4 @@
-import lab4.utils as utils
+import utils
 import os
 
 class Queue:
@@ -9,7 +9,7 @@ class Queue:
         self.queue.append(value)
 
     def remove(self):
-        if queue:
+        if self.queue:
             value = self.queue[0]
             self.queue.pop(0)
             return value

@@ -1,4 +1,4 @@
-import lab4.utils as utils
+import utils
 import os
 
 class Person:

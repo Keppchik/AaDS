@@ -1,4 +1,4 @@
-import lab6.utils as utils
+import utils
 import os
 
 class PhoneBook:

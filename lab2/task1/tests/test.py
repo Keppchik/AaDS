@@ -1,6 +1,6 @@
 import unittest
 from lab2.task1.src.merge_sort import merge_sort
-from lab2.utils import worst_array
+from utils import worst_array
 
 class MergeSortTest(unittest.TestCase):
 

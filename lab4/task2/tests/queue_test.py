@@ -1,5 +1,5 @@
 import unittest
-import lab4.utils as utils
+import utils
 from lab4.task2.src.queue import Queue
 
 

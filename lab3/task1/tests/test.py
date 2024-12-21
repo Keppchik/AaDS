@@ -1,6 +1,6 @@
 import unittest
 from lab3.task1.src.quick_sort import *
-from lab3.utils import *
+from utils import worst_array
 
 class QuickSortTest(unittest.TestCase):
 

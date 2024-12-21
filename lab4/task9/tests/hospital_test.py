@@ -1,5 +1,5 @@
 import unittest
-import lab4.utils as utils
+import utils
 from lab4.task9.src.hospital import Queue
 
 

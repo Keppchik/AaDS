@@ -1,4 +1,4 @@
-import lab2.utils as utils
+import utils
 import os
 
 def bin_search(a, value, p, r):

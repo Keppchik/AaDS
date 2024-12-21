@@ -1,4 +1,4 @@
-import lab3.utils as utils
+import utils
 import random
 import os
 

@@ -1,6 +1,6 @@
 import unittest
 from random import randint
-import lab5.utils as utils
+import utils
 from lab5.task3.src.network_packets import process
 
 

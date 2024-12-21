@@ -1,4 +1,4 @@
-import lab1.utils as utils
+import utils
 import os
 
 time_start = utils.start_tracking()

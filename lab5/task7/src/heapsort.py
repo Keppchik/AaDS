@@ -1,4 +1,4 @@
-import lab5.utils as utils
+import utils
 import os
 
 def max_heap(data, n, i):

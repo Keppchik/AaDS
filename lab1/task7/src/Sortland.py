@@ -1,5 +1,5 @@
 import os
-import lab1.utils as utils
+import utils
 
 time_start = utils.start_tracking()
 input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))

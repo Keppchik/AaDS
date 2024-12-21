@@ -1,4 +1,4 @@
-import lab4.utils as utils
+import utils
 import os
 
 class Queue:
@@ -15,7 +15,7 @@ class Queue:
         return self.minimum
 
     def remove(self):
-        if queue:
+        if self.queue:
             del_value = self.queue[0]
             self.queue.pop(0)
             if del_value == self.minimum:

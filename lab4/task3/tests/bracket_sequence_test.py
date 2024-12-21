@@ -1,6 +1,6 @@
 import random
 import unittest
-import lab4.utils as utils
+import utils
 from lab4.task3.src.bracket_sequence import isCorrect
 
 

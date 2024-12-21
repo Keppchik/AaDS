@@ -1,5 +1,5 @@
 import unittest
-import lab4.utils as utils
+import utils
 import random
 from lab4.task10.src.queue_bakery import Person
 
