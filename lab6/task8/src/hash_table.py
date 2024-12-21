@@ -15,7 +15,7 @@ def make_table(n, x, a, b, ac, bc, ad, bd):
     return x, a, b
 
 if __name__ == '__main__':
-    print("LAB6 TASK 5:")
+    print("LAB6 TASK 8:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 

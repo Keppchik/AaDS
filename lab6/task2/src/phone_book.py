@@ -16,7 +16,7 @@ class PhoneBook:
 
 
 if __name__ == '__main__':
-    print("LAB6 TASK 4:")
+    print("LAB6 TASK 2:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
