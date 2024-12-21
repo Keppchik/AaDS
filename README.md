@@ -58,7 +58,7 @@
 
    ```bash
    export PYTHONPATH=$(pwd)
-   pytest lab6
+   pytest
    ```
 
 
