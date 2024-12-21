@@ -34,7 +34,6 @@ def main(isTest = False, a = None, n = None):
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
-
     if not isTest:
         data = utils.read_from_file(input_path)
         n = data[0]
@@ -42,10 +41,14 @@ def main(isTest = False, a = None, n = None):
 
     merge_sort(a, 0, n)
 
+    print(f"INPUT: {data}")
+    print(f"RESULT: {count}")
+
     utils.write_in_file(output_path, [count])
     if not isTest:
         utils.print_time_memory(time_start)
     return count
 
 if __name__ == "__main__":
+    print("LAB2 TASK 3:")
     main()

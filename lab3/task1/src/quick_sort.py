@@ -49,6 +49,7 @@ def random_quick_sort_three(arr, low, high):
 
 
 if __name__ == "__main__":
+    print("LAB3 TASK 1:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -56,6 +57,9 @@ if __name__ == "__main__":
     n = data[0]
     arr = data[1:]
     result = random_quick_sort_three(arr, 0, n)
+
+    print(f"INPUT: {data}")
+    print(f"RESULT: {result}")
 
     utils.write_in_file(output_path, result)
     utils.print_time_memory(time_start)

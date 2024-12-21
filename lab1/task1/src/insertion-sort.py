@@ -11,6 +11,7 @@ def insertion_sort(n, a):
         a[j + 1] = temp
 
 if __name__ == '__main__':
+    print("LAB1 TASK 1:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -19,6 +20,9 @@ if __name__ == '__main__':
     n = data[0]
 
     insertion_sort(n, a)
+
+    print(f"INPUT: {data}")
+    print(f"RESULT: {a}")
 
     utils.write_in_file(output_path, a)
     utils.print_time_memory(time_start)

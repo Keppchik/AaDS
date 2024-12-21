@@ -12,6 +12,7 @@ def adding_binary_numbers(s1, s2):
     return s3
 
 if __name__ == '__main__':
+    print("LAB1 TASK 9:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -19,6 +20,9 @@ if __name__ == '__main__':
     s1, s2 = data.split()
 
     s3 = adding_binary_numbers(s1, s2)
+
+    print(f"INPUT: {data}")
+    print(f"RESULT: {s3}")
 
     utils.write_in_file(output_path, s3, split_str="")
     utils.print_time_memory(time_start)

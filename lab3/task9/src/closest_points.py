@@ -34,6 +34,7 @@ def closest_points(points, low, high):
 
 
 if __name__ == "__main__":
+    print("LAB3 TASK 9:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -46,6 +47,9 @@ if __name__ == "__main__":
     points = QS.random_quick_sort_three(points, 0, n)
 
     result = f"{closest_points(points, 0, n):.6}"
+
+    print(f"INPUT: {points}")
+    print(f"RESULT: {result}")
 
     utils.write_in_file(output_path, [result])
     utils.print_time_memory(time_start)

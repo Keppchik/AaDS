@@ -8,6 +8,7 @@ def bubble_sort(a):
                 a[j], a[j - 1] = a[j - 1], a[j]
 
 if __name__ == '__main__':
+    print("LAB1 TASK 6:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -16,6 +17,9 @@ if __name__ == '__main__':
     a = data[1:]
 
     bubble_sort(a)
+
+    print(f"INPUT: {data}")
+    print(f"RESULT: {a}")
 
     utils.write_in_file(output_path, a)
     utils.print_time_memory(time_start)

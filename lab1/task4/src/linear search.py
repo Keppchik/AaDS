@@ -9,6 +9,7 @@ def linear_search(a, target):
     return k
 
 if __name__ == '__main__':
+    print("LAB1 TASK 4:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -17,6 +18,9 @@ if __name__ == '__main__':
     v = data[-1]
 
     k = linear_search(a, v)
+
+    print(f"INPUT: {data}")
+    print(f"RESULT: {k}")
 
     if len(k) == 0:
         utils.write_in_file(output_path, [-1])

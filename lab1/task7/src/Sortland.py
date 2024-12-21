@@ -21,6 +21,7 @@ def sortland(n, a):
     return s
 
 if __name__ == "__main__":
+    print("LAB1 TASK 7:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -29,6 +30,9 @@ if __name__ == "__main__":
     a = data[1:]
 
     s = sortland(n, a)
+
+    print(f"INPUT: {data}")
+    print(f"RESULT: {s}")
 
     utils.write_in_file(output_path, s)
     utils.print_time_memory(time_start)

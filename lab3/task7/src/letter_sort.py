@@ -25,6 +25,7 @@ def letter_sort(arr, n, m, k):
 
 
 if __name__ == "__main__":
+    print("LAB3 TASK 7:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -35,6 +36,9 @@ if __name__ == "__main__":
     arr = data[5:].replace("\n", " ").split()
 
     result = letter_sort(arr.copy(), n, m, k)
+
+    print(f"INPUT: {data.split()}")
+    print(f"RESULT: {result}")
 
     utils.write_in_file(output_path, result)
     utils.print_time_memory(time_start)

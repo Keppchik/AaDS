@@ -14,6 +14,7 @@ def bin_search(a, value, p, r):
 
 
 if __name__ == "__main__":
+    print("LAB2 TASK 4:")
     time_start = utils.start_tracking()
     input_path, output_path = utils.get_file_paths(os.path.abspath(__file__))
 
@@ -24,6 +25,9 @@ if __name__ == "__main__":
     b = data[n+2:]
 
     result = [bin_search(a, number, 0, n) for number in b]
+
+    print(f"INPUT: {data}")
+    print(f"RESULT: {result}")
 
     utils.write_in_file(output_path, result)
     utils.print_time_memory(time_start)
