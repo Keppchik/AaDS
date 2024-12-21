@@ -4,10 +4,7 @@ import utils
 def sortland(n, a):
     b = a.copy()
 
-    for i in range(n):
-        for j in range(n):
-            if a[i] < a[j]:
-                a[i], a[j] = a[j], a[i]
+    a = sorted(a)
 
     s = ["-1", "-1", "-1"]
     for i in range(n):

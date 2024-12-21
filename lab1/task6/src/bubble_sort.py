@@ -1,7 +1,7 @@
 import os
 import utils
 
-def bubble_sort(a):
+def bubble_sort(n, a):
     for i in range(n):
         for j in range(n - 1, i, -1):
             if a[j] < a[j - 1]:
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     n = data[0]
     a = data[1:]
 
-    bubble_sort(a)
+    bubble_sort(n, a)
 
     print(f"INPUT: {data}")
     print(f"RESULT: {a}")

@@ -41,8 +41,9 @@ def main(isTest = False, a = None, n = None):
 
     merge_sort(a, 0, n)
 
-    print(f"INPUT: {data}")
-    print(f"RESULT: {count}")
+    if not isTest:
+        print(f"INPUT: {data}")
+        print(f"RESULT: {count}")
 
     utils.write_in_file(output_path, [count])
     if not isTest:
