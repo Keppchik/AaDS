@@ -56,19 +56,9 @@
 
 4. **Запуск всех тестов**
 
-    Для terminal
    ```bash
-   for script in lab*/*/tests/*.py; do PYTHONPATH=$(pwd) python "$script"; done
-   ```
-   Для cmd
-   ```bash
-   set PYTHONPATH=%cd%
-   for /f "delims=" %f in ('dir /s /b *.py ^| findstr "\\tests\\"') do python "%f"
-   ```
-   Для PowerShell
-   ```bash
-   $env:PYTHONPATH = (Get-Location).Path
-   Get-ChildItem -Recurse -Filter *.py -Path lab*/*/tests | ForEach-Object { python $_.FullName }
+   export PYTHONPATH=$(pwd)
+   pytest lab6
    ```
 
 
