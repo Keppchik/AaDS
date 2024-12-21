@@ -1,5 +1,5 @@
 import unittest
-from lab3.task1.src.quick_sort import *
+from lab3.task1.src.quick_sort import random_quick_sort_three
 from utils import worst_array
 
 class QuickSortTest(unittest.TestCase):
